@@ -5,12 +5,14 @@ import { createStore } from 'redux';
 
 import reducers from './reducers';
 import { Header } from './common';
+import LibraryList from './components/LibraryList';
 
 const App = () => {
     return (
-        <Provider store={createStore( reducers )}>
+        <Provider store={createStore(reducers)}>
             <View>
                 <Header title='Flash Cards'/>
+                <LibraryList/>
             </View>
         </Provider>
     );
