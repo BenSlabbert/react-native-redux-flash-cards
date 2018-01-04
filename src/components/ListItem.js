@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import { Text } from 'react-native';
+import { connect } from 'react-redux';
 
 import { CardSection } from './../common';
+import * as actions from '../actions';
 
 class ListItem extends Component {
 
@@ -25,4 +27,7 @@ const styles = {
     }
 };
 
-export default ListItem;
+// passing actions to redux
+// dispatches actions to the redux store
+// and passes them into the component as props
+export default connect(null, actions)(ListItem);
