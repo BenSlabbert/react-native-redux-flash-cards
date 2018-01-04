@@ -46,10 +46,9 @@ const
         }
     };
 
-const
-    mapStateToProps = state => {
-        return { selectedLibraryId: state.selectedLibraryId }
-    };
+const mapStateToProps = state => {
+    return { selectedLibraryId: state.selectedLibraryId }
+};
 
 // passing actions to redux
 // dispatches actions to the redux store
