@@ -8,9 +8,9 @@ import * as actions from '../actions';
 class ListItem extends Component {
 
     renderDescription() {
-        const { selectedLibraryId, library } = this.props;
+        const { expanded, library } = this.props;
 
-        if ( library.id === selectedLibraryId ) {
+        if ( expanded ) {
             return (
                 <Text>{library.description}</Text>
             );
@@ -46,8 +46,11 @@ const
         }
     };
 
-const mapStateToProps = state => {
-    return { selectedLibraryId: state.selectedLibraryId }
+// called with state, and the props
+// we call the component with
+const mapStateToProps = ( state, ownProps ) => {
+    const expanded = state.selectedLibraryId === ownProps.library.id;
+    return { expanded };
 };
 
 // passing actions to redux
